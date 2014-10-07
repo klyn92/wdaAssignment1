@@ -34,7 +34,7 @@
 			$minCost = "0";
 			
 		if ($maxCost == NULL)
-			$maxCost = "30";
+			$maxCost = "35";
 	?>
 </body>	
 </html>
