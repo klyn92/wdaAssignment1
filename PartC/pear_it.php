@@ -1,5 +1,13 @@
 <?php
 
+	echo "<script>
+			function goBack()
+			{
+				window.history.back()
+			}
+		</script>";
+	
+
 set_include_path('C:/wamp/bin/php/php5.5.12/pear');
 require_once "HTML/Template/IT.php";
 require "db2.inc";
@@ -76,13 +84,19 @@ if (!($connection =  @mysql_connect('localhost','root','')))
      $rowsFound = @mysql_num_rows($result);
 		
   
-	 if ($rowsFound > 0)
+	 if ($rowsFound == 0)
     {
+		echo "Results not found!";
+		echo "<br/>";
+		echo "<button onclick='goBack'>Go Back</button>";
+	}
+	else
+	{
  
 		while ($row = mysql_fetch_array($result))
 		{
 		 
-			$template->setCurrentBlock("CUSTOMER");
+			$template->setCurrentBlock("WINESTORE");
 			$template->setVariable("WINEID", $row['wine_id']);
 			$template->setVariable("WINENAME", $row['wine_name']);
 			$template->setVariable("VARIETY", $row['variety']);

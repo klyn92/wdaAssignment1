@@ -16,18 +16,18 @@
 		<th>NUMBER OF CUSTOMERS</th>
 	</tr>	
 	
-	<!-- BEGIN CUSTOMER -->
+	<!-- BEGIN WINESTORE -->
 	<tr>
-		<td>{WINEID}</td>
-		<td>{WINENAME}</td>
-		<td>{VARIETY}</td>
-		<td>{YEAR}</td>
-		<td>{WINERYNAME}</td>
-		<td>{REGIONNAME}</td>
-		<td>{INVENTORY}</td>
-		<td>{PRICE}</td>
-		<td>{NUMBEROFCUSTOMERS}</td>
+		<td align = "center">{WINEID}</td>
+		<td align = "center">{WINENAME}</td>
+		<td align = "center">{VARIETY}</td>
+		<td align = "center">{YEAR}</td>
+		<td align = "center">{WINERYNAME}</td>
+		<td align = "center">{REGIONNAME}</td>
+		<td align = "center">{INVENTORY}</td>
+		<td align = "center">{PRICE}</td>
+		<td align = "center">{NUMBEROFCUSTOMERS}</td>
 	</tr>	
-	<!-- END CUSTOMER -->
+	<!-- END WINESTORE -->
 </body>	
 </html>

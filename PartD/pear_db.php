@@ -88,7 +88,14 @@
 		//Results
 		//$result = mysqli_query($connect, $select);
 		$result = ($connection->query($select));
-		
+		if ($result->numRows() == 0)
+		{
+			echo "Results not found!";
+			echo "<br/>";
+			echo "<button onclick='goBack()'>Go Back</button>";
+		}
+		else
+		{
 			echo"<table border='1'>
 				<tr bgcolor=#cccccc>
 					<td  align='center'>Wine ID</td>
@@ -124,7 +131,7 @@
 					}
 			
 			echo "</table>";
-				
+		}		
 		//mysqli_close($connect);
 		
 	?>
