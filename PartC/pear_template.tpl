@@ -1,10 +1,10 @@
 <html>
 <head>
-<title>Wine</title>
+	<title> WINE STORE </title>
 </head>
 <body>
-	<table border ='1'>
-	<tr> 
+	<table border = '1'>
+	<tr>
 		<th>WINE ID</th>
 		<th>WINE NAME</th>
 		<th>VARIETY</th>
@@ -13,11 +13,11 @@
 		<th>REGION NAME</th>
 		<th>INVENTORY</th>
 		<th>PRICE</th>
-		<th>NUMBER OF CUSTOMER</th>
-	</tr>
-	<!--BEGIN CUSTOMER -->
+		<th>NUMBER OF CUSTOMERS</th>
+	</tr>	
+	
+	<!-- BEGIN CUSTOMER -->
 	<tr>
-		
 		<td>{WINEID}</td>
 		<td>{WINENAME}</td>
 		<td>{VARIETY}</td>
@@ -27,8 +27,7 @@
 		<td>{INVENTORY}</td>
 		<td>{PRICE}</td>
 		<td>{NUMBEROFCUSTOMERS}</td>
-	</tr>
-	<!--END CUSTOMER -->
-	</table>
-</body>
+	</tr>	
+	<!-- END CUSTOMER -->
+</body>	
 </html>
