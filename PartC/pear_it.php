@@ -67,7 +67,7 @@ if (!($connection =  @mysql_connect('localhost','root','')))
 		HAVING count(wine.wine_id) >= '".$numOfCustomer."'
 		ORDER BY wine.wine_id, wine.wine_name, wine.year";	
 		
-		if (!($result = mysql_query ($query, $connection)))
+		if (!($result = @mysql_query ($query, $connection)))
 			showerror();
 		
 	$template=new HTML_Template_IT(".");
@@ -75,13 +75,13 @@ if (!($connection =  @mysql_connect('localhost','root','')))
   
      $rowsFound = @mysql_num_rows($result);
 		
-   
-	if ($rowsFound > 0)
+  
+	/* if ($rowsFound > 0)
     {
-       	
+ 
 		while ($row = mysql_fetch_array($result))
 		{
-		
+		 echo "hello2";
 			$template->setCurrentBlock("CUSTOMER");
 			$template->setVariable("WINEID", $row['wine_id']);
 			$template->setVariable("WINENAME", $row['wine_name']);
@@ -97,6 +97,34 @@ if (!($connection =  @mysql_connect('localhost','root','')))
 		$template->show();
     } 
 
-	
+	 */
+	 
+	 if ($rowsFound > 0)
+			{
+				
+				while ($row = mysql_fetch_array($result))
+				{
+					// Work with the winestore block
+					$template->setCurrentBlock("CUSTOMER");
+					
+					// Assign the row data to the template placeholders
+					 $template->setVariable("WINEID", $row["wine_id"]);
+					 $template->setVariable("WINENAME", $row["wine_name"]);
+					 $template->setVariable("VARIETY", $row["variety"]);
+					 $template->setVariable("YEAR", $row["year"]);
+					 $template->setVariable("WINERYNAME", $row["winery_name"]);
+					 $template->setVariable("REGIONNAME", $row["region_name"]);
+					 $template->setVariable("INVENTORY", $row["on_hand"]);
+					 $template->setVariable("PRICE", $row["cost"]);
+					 $template->setVariable("NUMBEROFCUSTOMERS", $row["cust"]);
+					// Parse the current block
+					$template->parseCurrentBlock( );
+				}
+			  
+				
+		  
+			}
+			// Output the web page
+				$template->show( );
 
 ?>
